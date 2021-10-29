@@ -41,21 +41,6 @@ form {
         margin-bottom: 20px;
     }
 
-    form a {
-        text-decoration: none;
-        color: #000;
-        font-weight: bold;
-        font-size: 12px;
-    }
-
-        form a:hover {
-            text-shadow: 2px 2px 6px #00000040;
-        }
-
-        form a:active {
-            text-shadow: none;
-        }
-
     form input {
         width: 200px;
         padding: 1em;
@@ -71,33 +56,30 @@ form {
         transition: all 0.2 ease-in-out;
     }
 
-.btnRegister {
+/*.btnRegister {
     margin-top: 10px;
     width: 150px;
     font-size: 1rem;
-    background: #3cadd4;
+    background-color: #3cadd4;
     color: #ffffff;
-}
-
-
-    /*form input[type='button'] {
+}*/
+/*form input[type='button'] {
         margin-top: 10px;
         width: 150px;
         font-size: 1rem;
         background: #3cadd4;
         color: #ffffff;
     }*/
-
-    .btnRegister:hover {
-        cursor: pointer;
-    }
-    /*form input[type='button']:hover {
+/*.btnRegister:hover {
+    cursor: pointer;*/
+}
+/*form input[type='button']:hover {
         cursor: pointer;
     }*/
 
-    .btnRegister:active {
-        background: rgba(255, 255, 255, 0.25);
-    }
+/*.btnRegister:active {
+    background: rgba(255, 255, 255, 0.25);*/
+}
 /*form input[type='button']:active {
         background: rgba(255, 255, 255, 0.25);
     }*/

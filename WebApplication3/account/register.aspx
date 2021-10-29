@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="WebApplication3.account.WebForm1" %>
 
-       <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" runat="server">
 
 <head>
@@ -19,13 +19,11 @@
         <form runat="server">
             <img src="../../img/310-3105859_film-cinema-icon-png.png" alt="Logo" height="120px">
             <h2>Welcome</h2>
-            <input id="txtUserName" type="text" placeholder="User name" runat="server">
-            <br/>
-            <input id="txtEmail" type="email" placeholder="Email" required runat="server"><br/>
-            <input id="txtPassword" type="password" placeholder="Password" required runat="server"><br/>
-            <asp:Button Style="" runat="server" Text="Register" OnClick="btnRegister_Click"/><br />
-            
-            <a href="/account/Login.aspx">Also have accont? Sign in</a>
+            <input id="txtUserName" type="text" placeholder="User name" runat="server"><br />
+            <input id="txtEmail" type="email" placeholder="Email" required runat="server"><br />
+            <input id="txtPassword" type="password" placeholder="Password" required runat="server"><br />
+            <asp:Button Style="margin-top: 10px; width: 150px; font-size: 1rem; background-color: #3cadd4; color: #ffffff;"
+                runat="server" Text="Register" OnClick="btnRegister_Click" /><br />
         </form>
 
     </div>
