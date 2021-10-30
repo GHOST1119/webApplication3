@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 using WebApplication3.Repository;
 
 namespace WebApplication3.Services
@@ -12,6 +13,34 @@ namespace WebApplication3.Services
                 Person email_check = new Person();
                 email_check.Email = email;
                 bool check = db.People.Any(p => p.Email == email_check.Email);
+                return check;
+            }
+        }
+
+        public Regex CreateValidEmailRegex()
+        {
+            string validEmailPattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
+            + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)"
+            + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+
+            return new Regex(validEmailPattern, RegexOptions.IgnoreCase);
+        }
+
+        public bool EmailIsValid(string emailAddress)
+        {
+            Regex ValidEmailRegex = CreateValidEmailRegex();
+            bool isValid = ValidEmailRegex.IsMatch(emailAddress);
+            return isValid;
+        }
+
+        public bool Find(string email, string password)
+        {
+            using (accountEntities db = new accountEntities())
+            {
+                Person Information_check = new Person();
+                Information_check.Email = email;
+                Information_check.Password = password;
+                bool check = db.People.Any(p=>p.Email==Information_check.Email && p.Password ==Information_check.Password);
                 return check;
             }
         }

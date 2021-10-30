@@ -24,6 +24,7 @@
             <input id="txtPassword" type="password" placeholder="Password" required runat="server"><br />
             <asp:Button Style="margin-top: 10px; width: 150px; font-size: 1rem; background-color: #3cadd4; color: #ffffff;"
                 runat="server" Text="Register" OnClick="btnRegister_Click" /><br />
+            <a href="login.aspx">Also have accont? Sign in</a>
         </form>
 
     </div>

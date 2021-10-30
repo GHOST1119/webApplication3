@@ -3,6 +3,7 @@ using System.Web.UI;
 using WebApplication3.Repository;
 using WebApplication3.Services;
 
+
 namespace WebApplication3.account
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -19,26 +20,24 @@ namespace WebApplication3.account
 
         public void btnRegister_Click(object sender, EventArgs e)
         {
-            bool check = accountRepositiry.Check(txtEmail.Value);
-            if (check == false)
+            bool isValiEmail = accountRepositiry.EmailIsValid(txtEmail.Value);
+            if (isValiEmail == true)
             {
-                accountRepositiry.Insert(txtUserName.Value, txtEmail.Value, txtPassword.Value);
-                Response.Redirect("Login.aspx");
+                bool check = accountRepositiry.Check(txtEmail.Value);
+                if (check == false)
+                {
+                    accountRepositiry.Insert(txtUserName.Value, txtEmail.Value, txtPassword.Value);
+                    Response.Redirect("Verify.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Duplicate email!!!');</script>");
+                }
             }
             else
             {
-                MessageBox("ایمیل تکراری است");
-                return;
+                Response.Write("<script>alert('Email is not valid!!!');</script>");
             }
         }
-        public void MessageBox(string Message)
-        {
-            Page.ClientScript.RegisterStartupScript(
-               Page.GetType(),
-               "MessageBox",
-               "<script language='javascript'>alert('" + Message + "');</script>"
-            );
-        }
-
     }
 }
