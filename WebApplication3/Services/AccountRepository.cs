@@ -6,6 +6,7 @@ namespace WebApplication3.Services
 {
     public class AccountRepository : IAccountRepository
     {
+        public Person Get_Values { get; set; }
         public bool Check(string email)
         {
             using (accountEntities db = new accountEntities())
@@ -58,6 +59,14 @@ namespace WebApplication3.Services
             db.People.Add(p1);
             db.SaveChanges();
             db.Dispose();
+        }
+
+        public Person SendPassword(string email)
+        {
+            accountEntities db = new accountEntities();
+            Person get =db.People.SingleOrDefault(p=>p.Email==email);
+            Person get_pass = new Person() {UserName=get.UserName,Email=get.Email,Password=get.Password};
+            return get_pass;
         }
     }
 }

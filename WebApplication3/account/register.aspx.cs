@@ -17,6 +17,7 @@ namespace WebApplication3.account
         {
 
         }
+        public Person Get_Values { get; set; }
 
         public void btnRegister_Click(object sender, EventArgs e)
         {
@@ -26,8 +27,12 @@ namespace WebApplication3.account
                 bool check = accountRepositiry.Check(txtEmail.Value);
                 if (check == false)
                 {
+                    //Get_Values.UserName=txtUserName.Value;
+                    //Get_Values.Email=txtEmail.Value;
+                    //Get_Values.Password=txtPassword.Value;
                     accountRepositiry.Insert(txtUserName.Value, txtEmail.Value, txtPassword.Value);
-                    Response.Redirect("Verify.aspx");
+
+                    //Response.Redirect("Verify.aspx");
                 }
                 else
                 {

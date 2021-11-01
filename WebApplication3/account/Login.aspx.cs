@@ -23,15 +23,23 @@ namespace WebApplication3.account
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            bool find=accountRepositiry.Find(txtEmail.Value,txtPassword.Value);
-            if(find==true)
+            bool check = accountRepositiry.EmailIsValid(txtEmail.Value);
+            if(check==true)
             {
-                Response.Redirect("");
+                bool find = accountRepositiry.Find(txtEmail.Value, txtPassword.Value);
+                if (find == true)
+                {
+                    Response.Redirect("");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Username or email is incorrect!!!');</script>");
+                }
             }
             else
             {
-                Response.Write("<script>alert('Username or email is incorrect!!!');</script>");
-            }                   
+                Response.Write("<script>alert('Email is not valid!!!');</script>");
+            }
         }
     }
 }

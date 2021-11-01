@@ -14,6 +14,7 @@ namespace WebApplication3.Repository
         bool Check(string email);
         Regex CreateValidEmailRegex();
         bool EmailIsValid(string emailAddress);
-        bool Find(string email,string password);        
+        bool Find(string email,string password);
+        Person SendPassword(string email);
     }
 }

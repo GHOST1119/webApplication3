@@ -82,9 +82,12 @@
     <Content Include="account\register.aspx" />
     <Content Include="account\Login.aspx" />
     <Content Include="account\Verify.aspx" />
+    <Content Include="content\forgotPassword.css" />
     <Content Include="content\Login.css" />
     <Content Include="content\register.css" />
     <Content Include="font\fontawesome-webfont.svg" />
+    <Content Include="html view\accountVerify.html" />
+    <Content Include="html view\forgotPassword.html" />
     <Content Include="img\134-1340367_movie-icons-free-download-software-icon-png-blue.png" />
     <Content Include="img\310-3105859_film-cinema-icon-png.png" />
     <Content Include="img\bokeh_car_lights_bg.jpg" />
