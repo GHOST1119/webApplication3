@@ -10,11 +10,11 @@ namespace WebApplication3.Repository
 {
     interface IAccountRepository
     {
-        void Insert(string userName,string email,string password);
         bool Check(string email);
         Regex CreateValidEmailRegex();
         bool EmailIsValid(string emailAddress);
         bool Find(string email,string password);
         Person SendPassword(string email);
+        string Code_6_digit();
     }
 }

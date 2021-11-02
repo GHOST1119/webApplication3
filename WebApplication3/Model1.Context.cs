@@ -13,10 +13,10 @@ namespace WebApplication3
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class accountEntities : DbContext
+    public partial class accountEntities1 : DbContext
     {
-        public accountEntities()
-            : base("name=accountEntities")
+        public accountEntities1()
+            : base("name=accountEntities1")
         {
         }
     
@@ -26,5 +26,6 @@ namespace WebApplication3
         }
     
         public virtual DbSet<Person> People { get; set; }
+        public virtual DbSet<Verify> Verifies { get; set; }
     }
 }

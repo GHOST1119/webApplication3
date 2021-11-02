@@ -7,9 +7,7 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
+                <asp:Button Style="margin-top: 10px; width: 150px; font-size: 1rem; background: #3cadd4; color: #ffffff;"
+                ID="Button1" runat="server" Text="Verify" OnClick="btnVerify_Click" /><br />
 </body>
 </html>

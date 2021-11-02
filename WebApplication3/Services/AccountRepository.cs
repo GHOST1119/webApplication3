@@ -1,21 +1,43 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using WebApplication3.Repository;
 
 namespace WebApplication3.Services
 {
     public class AccountRepository : IAccountRepository
     {
-        public Person Get_Values { get; set; }
         public bool Check(string email)
         {
-            using (accountEntities db = new accountEntities())
+            using (accountEntities1 db = new accountEntities1())
             {
                 Person email_check = new Person();
                 email_check.Email = email;
                 bool check = db.People.Any(p => p.Email == email_check.Email);
                 return check;
             }
+        }
+
+        public string Code_6_digit()
+        {
+            string num = "0123456789";
+            int len = num.Length;
+            string otp = string.Empty;
+            int otpdigit = 6;
+            string finaldigit;
+            int getindex;
+            for (int i = 0; i < otpdigit; i++)
+            {
+                do
+                {
+                    getindex = new Random().Next(0, len);
+                    finaldigit = num.ToCharArray()[getindex].ToString();
+                } while (otp.IndexOf(finaldigit) != -1);
+                otp += finaldigit;
+
+            }
+            return otp;
         }
 
         public Regex CreateValidEmailRegex()
@@ -36,7 +58,7 @@ namespace WebApplication3.Services
 
         public bool Find(string email, string password)
         {
-            using (accountEntities db = new accountEntities())
+            using (accountEntities1 db = new accountEntities1())
             {
                 Person Information_check = new Person();
                 Information_check.Email = email;
@@ -46,27 +68,46 @@ namespace WebApplication3.Services
             }
         }
 
-        public void Insert(string userName, string email, string password)
+        public async Task InsertToPeopleTable(string userName, string email, string password)
         {
-            accountEntities db = new accountEntities();
-
-            Person p1 = new Person()
+            await new Task(() =>
             {
-                UserName = userName,
-                Email = email,
-                Password = password
-            };
-            db.People.Add(p1);
-            db.SaveChanges();
-            db.Dispose();
+                accountEntities1 db = new accountEntities1();
+
+                Person p1 = new Person()
+                {
+                    UserName = userName,
+                    Email = email,
+                    Password = password
+                };
+                db.People.Add(p1);
+                db.SaveChanges();
+                db.Dispose();
+            });
         }
 
         public Person SendPassword(string email)
         {
-            accountEntities db = new accountEntities();
+            accountEntities1 db = new accountEntities1();
             Person get =db.People.SingleOrDefault(p=>p.Email==email);
             Person get_pass = new Person() {UserName=get.UserName,Email=get.Email,Password=get.Password};
             return get_pass;
         }
-    }
+        public async Task InsertToVerifyTable(string userName, string email, string password)
+        {
+            await new Task(() =>
+            {
+                accountEntities1 db = new accountEntities1();
+
+                Verify p1 = new Verify()
+                {
+                    UserName = userName,
+                    Email = email,
+                    Password = password
+                };
+                db.Verifies.Add(p1);
+                db.SaveChanges();
+                db.Dispose();
+            });
+        }
 }
