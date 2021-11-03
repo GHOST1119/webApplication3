@@ -7,7 +7,7 @@ namespace WebApplication3.account
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        IAccountRepository accountRepositiry;
+        AccountRepository accountRepositiry;
         public WebForm1()
         {
             accountRepositiry = new AccountRepository();
@@ -25,9 +25,9 @@ namespace WebApplication3.account
                 bool check = accountRepositiry.Check(txtEmail.Value);
                 if (check == false)
                 {
-                    AccountRepository Repository_Insert = new AccountRepository();
-                    Repository_Insert.InsertToVerifyTable(txtUserName.Value, txtEmail.Value, txtPassword.Value);
-                    
+                    accountRepositiry.InsertToVerifyTable(txtUserName.Value, txtEmail.Value, txtPassword.Value);
+                    int Id = accountRepositiry.GetIdCode(txtEmail.Value);
+                    ViewState["Id"] = Id;
                     Response.Redirect("Verify.aspx");
                 }
                 else

@@ -9,7 +9,17 @@
     <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="accountEntities" annotation:LazyLoadingEnabled="true">
+  <EntityType Name="Verify">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="accountEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="People" EntityType="Self.Person" />
+    <EntitySet Name="Verifies" EntityType="Self.Verify" />
   </EntityContainer>
 </Schema>

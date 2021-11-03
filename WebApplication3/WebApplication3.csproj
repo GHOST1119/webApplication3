@@ -85,6 +85,7 @@
     <Content Include="content\forgotPassword.css" />
     <Content Include="content\Login.css" />
     <Content Include="content\register.css" />
+    <Content Include="content\Verify.css" />
     <Content Include="font\fontawesome-webfont.svg" />
     <Content Include="html view\accountVerify.html" />
     <Content Include="html view\forgotPassword.html" />

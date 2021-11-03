@@ -9,7 +9,17 @@
     <Property Name="Email" Type="varchar" MaxLength="150" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="250" Nullable="false" />
   </EntityType>
+  <EntityType Name="Verify">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
   <EntityContainer Name="accountModelStoreContainer">
     <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Verify" EntityType="Self.Verify" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

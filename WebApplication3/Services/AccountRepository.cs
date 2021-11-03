@@ -63,7 +63,7 @@ namespace WebApplication3.Services
                 Person Information_check = new Person();
                 Information_check.Email = email;
                 Information_check.Password = password;
-                bool check = db.People.Any(p=>p.Email==Information_check.Email && p.Password ==Information_check.Password);
+                bool check = db.People.Any(p => p.Email == Information_check.Email && p.Password == Information_check.Password);
                 return check;
             }
         }
@@ -89,8 +89,8 @@ namespace WebApplication3.Services
         public Person SendPassword(string email)
         {
             accountEntities1 db = new accountEntities1();
-            Person get =db.People.SingleOrDefault(p=>p.Email==email);
-            Person get_pass = new Person() {UserName=get.UserName,Email=get.Email,Password=get.Password};
+            Person get = db.People.SingleOrDefault(p => p.Email == email);
+            Person get_pass = new Person() { UserName = get.UserName, Email = get.Email, Password = get.Password };
             return get_pass;
         }
         public async Task InsertToVerifyTable(string userName, string email, string password)
@@ -110,4 +110,20 @@ namespace WebApplication3.Services
                 db.Dispose();
             });
         }
+        public int GetIdCode(string email)
+        {
+            accountEntities1 db = new accountEntities1();
+            var Id = db.Verifies.Where(s => s.Email == email).Select(s=>s.id);
+            int id = Convert.ToInt32(Id);
+            return id;
+        }
+        public Verify ValueOfVerifyTable(int Id)
+        {
+            Verify person = new Verify();
+            accountEntities1 db = new accountEntities1();
+            Verify value = db.Verifies.SingleOrDefault(v => v.id == Id);
+            Verify get_value = new Verify() { UserName = value.UserName, Email = value.Email, Password = value.Password };
+            return get_value;
+        }
+    }
 }
