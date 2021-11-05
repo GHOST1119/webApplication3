@@ -68,10 +68,8 @@ namespace WebApplication3.Services
             }
         }
 
-        public async Task InsertToPeopleTable(string userName, string email, string password)
+        public void InsertToPeopleTable(string userName, string email, string password)
         {
-            await new Task(() =>
-            {
                 accountEntities1 db = new accountEntities1();
 
                 Person p1 = new Person()
@@ -83,7 +81,6 @@ namespace WebApplication3.Services
                 db.People.Add(p1);
                 db.SaveChanges();
                 db.Dispose();
-            });
         }
 
         public Person SendPassword(string email)
@@ -93,10 +90,8 @@ namespace WebApplication3.Services
             Person get_pass = new Person() { UserName = get.UserName, Email = get.Email, Password = get.Password };
             return get_pass;
         }
-        public async Task InsertToVerifyTable(string userName, string email, string password)
+        public void InsertToVerifyTable(string userName, string email, string password)
         {
-            await new Task(() =>
-            {
                 accountEntities1 db = new accountEntities1();
 
                 Verify p1 = new Verify()
@@ -108,7 +103,6 @@ namespace WebApplication3.Services
                 db.Verifies.Add(p1);
                 db.SaveChanges();
                 db.Dispose();
-            });
         }
         public int GetIdCode(string email)
         {
