@@ -68,7 +68,7 @@ namespace WebApplication3.Services
             }
         }
 
-        public void InsertToPeopleTable(string userName, string email, string password)
+        public void Insert(string userName, string email, string password)
         {
                 accountEntities1 db = new accountEntities1();
 
@@ -89,35 +89,6 @@ namespace WebApplication3.Services
             Person get = db.People.SingleOrDefault(p => p.Email == email);
             Person get_pass = new Person() { UserName = get.UserName, Email = get.Email, Password = get.Password };
             return get_pass;
-        }
-        public void InsertToVerifyTable(string userName, string email, string password)
-        {
-                accountEntities1 db = new accountEntities1();
-
-                Verify p1 = new Verify()
-                {
-                    UserName = userName,
-                    Email = email,
-                    Password = password
-                };
-                db.Verifies.Add(p1);
-                db.SaveChanges();
-                db.Dispose();
-        }
-        public int GetIdCode(string email)
-        {
-            accountEntities1 db = new accountEntities1();
-            var Id = db.Verifies.Where(s => s.Email == email).Select(s=>s.id);
-            int id = Convert.ToInt32(Id);
-            return id;
-        }
-        public Verify ValueOfVerifyTable(int Id)
-        {
-            Verify person = new Verify();
-            accountEntities1 db = new accountEntities1();
-            Verify value = db.Verifies.SingleOrDefault(v => v.id == Id);
-            Verify get_value = new Verify() { UserName = value.UserName, Email = value.Email, Password = value.Password };
-            return get_value;
         }
     }
 }

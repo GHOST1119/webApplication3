@@ -16,7 +16,5 @@ namespace WebApplication3.Repository
         bool Find(string email,string password);
         Person SendPassword(string email);
         string Code_6_digit();
-        int GetIdCode(string email);
-        Verify ValueOfVerifyTable(int Id);
     }
 }

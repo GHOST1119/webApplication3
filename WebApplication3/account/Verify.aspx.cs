@@ -43,7 +43,7 @@ namespace WebApplication3.account
             if (cookieGetCode["code"] == txtCode.Value || cookieGetCode2["code"] ==txtCode.Value)
             {
                 HttpCookie cookie = Request.Cookies["UserInfo"];
-                accountRepository.InsertToPeopleTable(cookie["userName"], cookie["email"], cookie["password"]);
+                accountRepository.Insert(cookie["userName"], cookie["email"], cookie["password"]);
                 Response.Redirect("../html%20view/accountVerify.html");
             }
             else
