@@ -14,7 +14,7 @@
             <img src="../../img/310-3105859_film-cinema-icon-png.png" alt="Logo" height="120px">
             <h2>Welcome</h2>
             <input id="txtEmail" type="email" placeholder="Email" required runat="server"><br />
-            <asp:Button Style="margin-top: 10px; width: 150px; font-size: 1rem; background: #3cadd4; color: #ffffff;"
+            <asp:Button Style="margin-top: 10px; width: 150px; font-size: 1rem;cursor: pointer; background: #3cadd4; color: #ffffff;"
                 ID="Button1" runat="server" Text="Recovery" OnClick="btnRecovery_Click" /><br />
             <a href="Login.aspx">Login</a><br />
             <p>or</p>

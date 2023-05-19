@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WebApplication3.Repository
 {
-    interface IAccountRepository
+    public interface IAccountRepository
     {
         bool Check(string email);
         Regex CreateValidEmailRegex();

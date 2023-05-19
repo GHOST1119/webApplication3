@@ -38,6 +38,7 @@ namespace WebApplication3.account
         }
         public void btnVerify_Click(object sender, EventArgs e)
         {
+            RemotePost test = new RemotePost();
             HttpCookie cookieGetCode = Request.Cookies["generateCode"];
             HttpCookie cookieGetCode2 = Request.Cookies["generateCode2"];
             if (cookieGetCode["code"] == txtCode.Value || cookieGetCode2["code"] ==txtCode.Value)
