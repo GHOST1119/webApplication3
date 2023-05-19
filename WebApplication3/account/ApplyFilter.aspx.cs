@@ -18,7 +18,7 @@ namespace WebApplication3.account
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Session["addproduct"] = "false";
+            Session["addproduct"] = "false";
             List<Table_Test_1> AllProjects = test_Rep.GetAllPerson();
             DataList1.DataSource = AllProjects;
             DataList1.DataBind();
@@ -40,10 +40,36 @@ namespace WebApplication3.account
         protected void btnFilter(object sender, EventArgs e)
         {
             List<Table_Test_1> filter = test_Rep.Filter(txtUserName.Value);
-            //DataList1.DataSource = filter;
-            //DataList1.DataBind();
+            DataList1.DataSource = filter;
+            DataList1.DataBind();
         }
 
+        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            Session["addproduct"] = "true";
+            if (e.CommandName == "AddToCart")
+            {
+                Response.Redirect("cartPage.aspx?id=" + e.CommandArgument.ToString());
+            }
+            else
+            {
+                Response.Write("<script>alert('Duplicate email!!!');</script>");
+            }
+        }
+
+        protected void Lbtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("cartPage.aspx");
+        }
+
+        //protected void lbtnProjects(object sender, EventArgs e)
+        //{
+        //    HttpCookie cookie = new HttpCookie("ProjectInfo");
+        //    //cookie["ProjectName"] = ;
+        //    //cookie["ProjectAge"] =;
+        //    //cookie["ProjectGender"] =;
+        //    Response.Redirect("fullDataOfProjects.aspx");
+        //}
         //protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         //{
         //    Session["addproduct"] = "true";
@@ -85,14 +111,6 @@ namespace WebApplication3.account
         //    Label idLabel = (Label)row.FindControl("ID");
         //    string id = idLabel.Text;
         //    // Do something with the ID value...
-        //}
-        //protected void lbtnProjects(object sender, EventArgs e)
-        //{
-        //    HttpCookie cookie = new HttpCookie("ProjectInfo");
-        //    //cookie["ProjectName"] = ;
-        //    //cookie["ProjectAge"] =;
-        //    //cookie["ProjectGender"] =;
-        //    Response.Redirect("fullDataOfProjects.aspx");
         //}
     }
 }

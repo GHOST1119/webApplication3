@@ -4,6 +4,7 @@ using System.Linq;
 using System.Data.Entity;
 using System.Web;
 using WebApplication3.Repository;
+using System.Data;
 
 namespace WebApplication3.Services
 {
@@ -87,6 +88,22 @@ namespace WebApplication3.Services
             List<Table_Test_1> filterperson = db.Table_Test_1.Where(p => (string.IsNullOrEmpty(name) || p.Name == name) && (string.IsNullOrEmpty(aa) || p.Age == aa)).ToList();
             return filterperson;
             
+        }
+
+        public void InsertProduct(string orderid, int sno, string name, string age, string gender, string orderdate)
+        {
+            OrderDetail product = new OrderDetail()
+            {
+                OrderID = orderid,
+                Sno = sno,
+                Name = name,
+                Age = age,
+                Gender = gender,
+                OrderDate = orderdate
+            };
+            db.OrderDetails.Add(product);
+            db.SaveChanges();
+            db.Dispose();
         }
     }
 }

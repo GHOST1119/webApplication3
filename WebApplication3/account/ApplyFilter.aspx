@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ApplyFilter.aspx.cs" Inherits="WebApplication3.account.ApplyFilter" %>
+﻿<%@ Page Language="C#" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="ApplyFilter.aspx.cs" Inherits="WebApplication3.account.ApplyFilter" %>
 
 <!DOCTYPE html>
 
@@ -19,10 +19,11 @@
             <asp:Button Text="Filter" runat="server" OnClick="btnFilter" />
         </div>
         <br />
+        <asp:LinkButton Text="CartPage" runat="server" OnClick="Lbtn_Click"/>
         <hr />
 
         <div>
-            <asp:DataList ID="DataList1" runat="server" RepeatColumns="4" RepeatDirection="Horizontal" DataKeyField="ID">
+            <asp:DataList align="Center" ID="DataList1" runat="server" DataKeyField="ID" OnItemCommand="DataList1_ItemCommand">
                 <ItemTemplate>
                     <table style="border:2px solid gray">
                         <tr>
@@ -47,11 +48,10 @@
                         </tr>
                         <tr>
                             <td style="text-align: center">
-                                <asp:Button ID="btn1" Text="AddToCart" runat="server" Height="40px" Width="160px" CommandArgument='<%# Eval("ID") %>' CommandName="AddToCart" />
+                                <asp:Button ID="btn1" Text="AddToCart" runat="server" Height="40px" Width="160px" CommandArgument='<%# Eval("ID") %>' CommandName="AddToCart"  />
                             </td>
                         </tr>
                     </table>
-
                     <br />
                     <br />
                 </ItemTemplate>

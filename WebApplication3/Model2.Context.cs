@@ -26,5 +26,6 @@ namespace WebApplication3
         }
     
         public virtual DbSet<Table_Test_1> Table_Test_1 { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

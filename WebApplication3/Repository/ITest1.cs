@@ -17,5 +17,6 @@ namespace WebApplication3.Repository
         bool DeletePerson(int personId);
         void Save();
         List<Table_Test_1> Filter(string name);
+        void InsertProduct(string orderid,int sno,string name,string age,string gender,string orderdate);
     }
 }
