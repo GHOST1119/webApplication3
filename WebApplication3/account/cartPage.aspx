@@ -1,15 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="cartPage.aspx.cs" Inherits="WebApplication3.account.cartPage" %>
+﻿<%@ Page Title="cartPage" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="cartPage.aspx.cs" Inherits="WebApplication3.account.cartPage" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div align="center" style="margin:0 auto">
-            <h2 style="text-decoration: underline overline blink;color:#5f98f3">Your Order History</h2>
+<asp:Content ID="HeaderContent" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div>
+        <div align="center" style="margin: 0 auto">
+            <h2 style="text-decoration: underline overline blink; color: #5f98f3">Your Order History</h2>
             <br />
             <asp:HyperLink ID="HyperLink1" Text="Continue Shopping" Font-Size="X-Large" Font-Bold="true"
                 NavigateUrl="~/account/ApplyFilter.aspx" runat="server" />
@@ -49,7 +45,7 @@
                             <td style="text-align: center; background-color: #5f98f3">
                                 <asp:Label ID="Label4" Text='<%# Eval("Gender") %>' runat="server" Font-Bold="True" Font-Names="Open Sans SemiBold" ForeColor="White" />
                             </td>
-                        </tr>                        
+                        </tr>
                     </table>
 
                     <br />
@@ -57,6 +53,5 @@
                 </ItemTemplate>
             </asp:DataList>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>

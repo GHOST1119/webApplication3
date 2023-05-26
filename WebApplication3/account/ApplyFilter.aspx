@@ -1,16 +1,11 @@
-﻿<%@ Page Language="C#" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="ApplyFilter.aspx.cs" Inherits="WebApplication3.account.ApplyFilter" %>
+﻿<%@ Page Title="applyFilter" Language="C#" MasterPageFile="~/Site1.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="ApplyFilter.aspx.cs" Inherits="WebApplication3.account.ApplyFilter" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>applyFilter</title>
+<asp:Content ID="HeaderContent" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="../content/bootstrap.min.css" rel="stylesheet" />
     <link href="../content/applyFilter.css" rel="stylesheet" />
-
-</head>
-<body>
-    <form runat="server">
+</asp:Content>
+<asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div>
         <div class="container">
             <h2 class="name_profile">Test</h2>
             <input id="txtUserName" type="text" placeholder="User name" runat="server" /><br />
@@ -19,13 +14,13 @@
             <asp:Button Text="Filter" runat="server" OnClick="btnFilter" />
         </div>
         <br />
-        <asp:LinkButton Text="CartPage" runat="server" OnClick="Lbtn_Click"/>
+        <asp:LinkButton Text="CartPage" runat="server" OnClick="Lbtn_Click" />
         <hr />
 
         <div>
             <asp:DataList align="Center" ID="DataList1" runat="server" DataKeyField="ID" OnItemCommand="DataList1_ItemCommand">
                 <ItemTemplate>
-                    <table style="border:2px solid gray">
+                    <table style="border: 2px solid gray">
                         <tr>
                             <td style="text-align: center; background-color: #5f98f3">
                                 <asp:Label ID="Label1" Text='<%# Eval("ID") %>' runat="server" Font-Bold="True" Font-Names="Open Sans SemiBold" ForeColor="White" />
@@ -48,19 +43,14 @@
                         </tr>
                         <tr>
                             <td style="text-align: center">
-                                <asp:Button ID="btn1" Text="AddToCart" runat="server" Height="40px" Width="160px" CommandArgument='<%# Eval("ID") %>' CommandName="AddToCart"  />
+                                <asp:Button ID="btn1" Text="AddToCart" runat="server" Height="40px" Width="160px" CommandArgument='<%# Eval("ID") %>' CommandName="AddToCart" />
                             </td>
                         </tr>
                     </table>
                     <br />
                     <br />
                 </ItemTemplate>
-            </asp:DataList>            
+            </asp:DataList>
         </div>
-    </form>
-
-
-
-
-</body>
-</html>
+    </div>
+</asp:Content>
