@@ -1,7 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Defualt.aspx.cs" Inherits="WebApplication3.Defualt" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="WebApplication3.account.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="content/Css/home.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="../content/Css/home.css" rel="stylesheet" />
     <style>
         body{
             background-color:#e8f5ff;
@@ -22,16 +24,16 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="img/1.gif" alt="Los Angeles" style="width: 100%;">
+                    <img src="../img/1.gif" alt="Los Angeles" style="width: 100%;">
                 </div>
                 <div class="item">
-                    <img src="img/2.gif" alt="Chicago" style="width: 100%;">
+                    <img src="../img/2.gif" alt="Chicago" style="width: 100%;">
                 </div>
                 <div class="item">
-                    <img src="img/3.jpg" alt="New york" style="width: 100%;">
+                    <img src="../img/3.jpg" alt="New york" style="width: 100%;">
                 </div>
                 <div class="item">
-                    <img src="img/4.gif" alt="New york" style="width: 100%;">
+                    <img src="../img/4.gif" alt="New york" style="width: 100%;">
                 </div>
             </div>
 
@@ -57,7 +59,7 @@
                     <p class="product__price"><b>439 $</b></p>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-success btn-block">Details</button>
+                    <asp:Button class="btn btn-success btn-block" Text="Details" runat="server" OnClick="btnData1"/>
                 </div>
             </article>
             <article class="product">

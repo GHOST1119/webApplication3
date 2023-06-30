@@ -49,17 +49,18 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="AllProjects.aspx">AllProjects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Home.aspx">Home</a></li>
+                        <%--<li class="nav-item"><a class="nav-link" href="AllProjects.aspx">AllProjects</a></li>--%>
                         <li class="nav-item"><a class="nav-link" href="Profile.aspx">Profile</a></li>
-                        <li class="nav-item"><a class="nav-link" href="cartPage.aspx">CartPage</a></li>
-                        <li class="nav-item dropdown">
+                        <%--<li class="nav-item"><a class="nav-link" href="cartPage.aspx">CartPage</a></li>--%>
+                        <%--<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="manageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage
                             </a>
                             <div class="dropdown-menu" aria-labelledby="manageDropdown">
                                 <a class="dropdown-item" href="AddProjects.aspx">Add Project</a>
                                 <a class="dropdown-item" href="Projects.aspx">Projects</a>
                             </div>
-                        </li>
+                        </li>--%>
                         <li>
                             <asp:LinkButton class="btn btn-link nav-link" Text="LogOut" runat="server" OnClick="LogOut_Click"/>
                         </li>

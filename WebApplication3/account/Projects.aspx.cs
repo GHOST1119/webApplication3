@@ -23,7 +23,7 @@ namespace WebApplication3.account
 
             if (!IsPostBack)
             {
-                List<Table_Test_1> dt = test_Rep.GetAllPerson();
+                List<Product> dt = test_Rep.GetAllPerson();
                 repeaterNames.DataSource = dt;
                 repeaterNames.DataBind();
             }

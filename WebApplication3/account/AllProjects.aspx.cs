@@ -18,7 +18,7 @@ namespace WebApplication3.account
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Table_Test_1> AllProjects = test_Rep.GetAllPerson();
+            List<Product> AllProjects = test_Rep.GetAllPerson();
             DataList2.DataSource = AllProjects;
             DataList2.DataBind();
         }
@@ -37,7 +37,7 @@ namespace WebApplication3.account
         }
         protected void btnFilter(object sender, EventArgs e)
         {
-            List<Table_Test_1> filter = test_Rep.Filter(txtUser.Text,txtAge.Text,txtGender.Text);
+            List<Product> filter = test_Rep.Filter(txtUser.Text,txtAge.Text,txtGender.Text);
             DataList2.DataSource = filter;
             DataList2.DataBind();
         }

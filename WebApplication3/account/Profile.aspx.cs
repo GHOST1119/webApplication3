@@ -19,7 +19,9 @@ namespace WebApplication3.account
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HttpCookie cookie = Request.Cookies["UserInfo"];
+            lblUserName.Text = cookie["userName"];
+            lblEmail.Text = cookie["email"];
         }
         //protected void btnSendImage_Click(object sender, EventArgs e)
         //{

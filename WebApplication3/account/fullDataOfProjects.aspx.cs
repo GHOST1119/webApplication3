@@ -24,7 +24,7 @@ namespace WebApplication3.account
                 if (Request.QueryString["id"] != null)
                 {
                     int id = Convert.ToInt32(Request.QueryString["id"]);
-                    List<Table_Test_1> da = test1.GetPersonByid(id);
+                    List<Product> da = test1.GetPersonByid(id);
                     fullDataDataList.DataSource = da;
                     fullDataDataList.DataBind();
                     lblShowError.Visible = false;
@@ -42,8 +42,8 @@ namespace WebApplication3.account
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
-                Table_Test_1 dataItem = e.Item.DataItem as Table_Test_1;
-                Session["ID"] = dataItem.ID;
+                Product dataItem = e.Item.DataItem as Product;
+                Session["ID"] = dataItem.id;
                 // Find the labels inside the DataList item
                 Label label1 = e.Item.FindControl("Label1") as Label;
                 Label label2 = e.Item.FindControl("Label2") as Label;

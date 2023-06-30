@@ -14,15 +14,15 @@
                 <div class="row">
                     <div class="col-sm-4" id="ProductImg">
                         <div id="product-img">
-                            <img src="../img/dark_tint.png" alt="Nike Roshe Run - Mint Green"
+                            <img src="https://netology-code.github.io/mq-homeworks/adaptive-layout/product-list/img/prod1.png" alt=""
                                 title="Nike Roshe Run - Mint Green" class="shoe fade-in one" />
                         </div>
                     </div>
                     <div class="col-sm-8" id="ProductInfo">
                         <div id="product-info" >
                             <div id="product-spec" class="wrapper">
-                                <h1>Nike Roshe Run</h1>
-                                <h3>150</h3>
+                                <h1>Apple iPhone 7 32Gb Black</h1>
+                                <h3>439 $</h3>
                             </div>
                             <h4 class="clearfix">Description</h4>
                             <p id="aboutProduct">
@@ -79,11 +79,11 @@
                     </div>
                 </div>
             </section>
-            <asp:Label ID="Label1" Text='<%# Eval("Name") %>' runat="server" />
+            <%--<asp:Label ID="Label1" Text='<%# Eval("Name") %>' runat="server" />
             <br />
             <asp:Label ID="Label2" Text='<%# Eval("Age") %>' runat="server" />
             <br />
-            <asp:Label ID="Label3" Text='<%# Eval("Gender") %>' runat="server" /><br />
+            <asp:Label ID="Label3" Text='<%# Eval("Gender") %>' runat="server" /><br />--%>
         </ItemTemplate>
     </asp:DataList>
     <div style="margin-bottom: 20px">

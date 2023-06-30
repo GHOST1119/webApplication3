@@ -44,8 +44,8 @@ namespace WebApplication3.account
                     {
                         dr = dt.NewRow();
                         int id = Convert.ToInt32(Request.QueryString["id"]);
-                        Table_Test_1 da = test1.GetPersonById(id);                        
-                        dr["ID"] = da.ID;
+                        Product da = test1.GetPersonById(id);                        
+                        dr["ID"] = da.id;
                         dr["Name"] = da.Name;
                         dr["Age"] = da.Age;
                         dr["Gender"] = da.Gender;
@@ -66,8 +66,8 @@ namespace WebApplication3.account
 
                         dr = dt.NewRow();
                         int id = Convert.ToInt32(Request.QueryString["id"]);
-                        Table_Test_1 da = test1.GetPersonById(id);
-                        dr["ID"] = da.ID;
+                        Product da = test1.GetPersonById(id);
+                        dr["ID"] = da.id;
                         dr["Name"] = da.Name;
                         dr["Age"] = da.Age;
                         dr["Gender"] = da.Gender;

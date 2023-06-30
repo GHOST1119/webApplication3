@@ -24,34 +24,44 @@
                 <table>
                     <tbody>
                         <tr>
+                            <td>UserName :</td>
+                            <td>
+                                <asp:Label ID="lblUserName" Text="" runat="server" /></td>
+                        </tr>
+                        <tr>
+                            <td>Email :</td>
+                            <td>
+                                <asp:Label ID="lblEmail" Text="" runat="server" /></td>
+                        </tr>
+                        <%--<tr>
                             <td>Name :</td>
                             <td>
                                 <asp:Label Text="text" runat="server" /></td>
-                        </tr>
+                        </tr>--%>
                         <tr>
                             <td>Landline Phone :</td>
                             <td>
-                                <asp:Label Text="text" runat="server" /></td>
+                                <asp:Label Text="not entered" runat="server" /></td>
                         </tr>
                         <tr>
                             <td>Address :</td>
                             <td>
-                                <asp:Label Text="text" runat="server" /></td>
+                                <asp:Label Text="not entered" runat="server" /></td>
                         </tr>
                         <tr>
                             <td>Person Type :</td>
                             <td>
-                                <asp:Label Text="text" runat="server" /></td>
+                                <asp:Label Text="not entered" runat="server" /></td>
                         </tr>
-                        <tr>
+                        <%--<tr>
                             <td>Company Name :</td>
                             <td>
                                 <asp:Label Text="text" runat="server" /></td>
-                        </tr>
+                        </tr>--%>
                         <tr>
                             <td>Activity Field :</td>
                             <td>
-                                <asp:Label Text="text" runat="server" /></td>
+                                <asp:Label Text="not entered" runat="server" /></td>
                         </tr>
                     </tbody>
                 </table>

@@ -38,7 +38,13 @@ namespace WebApplication3.account
                     string code = accountRepository.Code_6_digit();
                     cookie2["code"] = code;
                     Response.Cookies.Add(cookie2);
-                    
+
+                    // for test
+                    accountRepository.Insert(cookie["userName"], cookie["email"], cookie["password"]);
+                    Response.Write("<script>alert('Your account has been Successfully Verify.');</script>");
+                    Response.Redirect("Login.aspx");
+                    // end for test
+
                     //RemotePost remotePost = new RemotePost();
                     //remotePost.Url = "https://raygansms.com/AutoSendCode.ashx";
                     //remotePost.Add("Username", "test123");
@@ -57,7 +63,7 @@ namespace WebApplication3.account
                     //mm.Body = string.Format("<h2>Hello: {0}!</h2> <h3>A sign in attempt requires further verification because we did not recognize your account.To complete the sign in, enter the verification code on the unrecognized account.</h3> <h3>Verification code: {1}</h3>", txtUserName.Value, code);
                     //smtp.Send(mm);
 
-                    Response.Redirect("Verify.aspx");
+                    //Response.Redirect("Verify.aspx");
                 }
                 else
                 {

@@ -1,8 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="accountModelStoreContainer" CdmEntityContainer="accountEntities1">
+  <EntityContainerMapping StorageEntityContainer="webapp3M1ModelStoreContainer" CdmEntityContainer="webapp3M1Entities">
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="webapp3M1Model.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="webapp3M1Model.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="People">
-      <EntityTypeMapping TypeName="accountModel.Person">
+      <EntityTypeMapping TypeName="webapp3M1Model.Person">
         <MappingFragment StoreEntitySet="Person">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -11,13 +32,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Verifies">
-      <EntityTypeMapping TypeName="accountModel.Verify">
-        <MappingFragment StoreEntitySet="Verify">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="webapp3M1Model.Product">
+        <MappingFragment StoreEntitySet="Product">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
