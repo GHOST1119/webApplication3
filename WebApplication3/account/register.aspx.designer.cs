@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication3.account {
-    
-    
-    public partial class WebForm1 {
-        
+namespace WebApplication3.account
+{
+
+
+    public partial class Register
+    {
+
         /// <summary>
         /// txtUserName control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace WebApplication3.account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtUserName;
-        
+
         /// <summary>
         /// txtEmail control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace WebApplication3.account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmail;
-        
+
         /// <summary>
         /// txtPassword control.
         /// </summary>

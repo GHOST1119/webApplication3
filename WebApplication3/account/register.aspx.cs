@@ -8,10 +8,10 @@ using WebApplication3.Services;
 
 namespace WebApplication3.account
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Register : System.Web.UI.Page
     {
         AccountRepository accountRepository;
-        public WebForm1()
+        public Register()
         {
             accountRepository = new AccountRepository();
         }

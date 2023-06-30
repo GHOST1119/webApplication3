@@ -10,22 +10,26 @@ namespace WebApplication3.Services
 {
     public class Test1 : ITest1
     {
-        test1Entities1 db = new test1Entities1();
-        public List<Table_Test_1> GetAllPerson()
+        webapp3M1Entities db = new webapp3M1Entities();
+        public List<Product> GetAllPerson()
         {
-            return db.Table_Test_1.ToList();
+            return db.Products.ToList();
         }
 
-        public Table_Test_1 GetPersonById(int personId)
+        public Product GetPersonById(int personId)
         {
-            return db.Table_Test_1.Find(personId);
+            return db.Products.Find(personId);
+        }
+        public List<Product> GetPersonByid(int personId)
+        {
+            return db.Products.Where(p => p.id == personId).ToList();
         }
 
-        public bool InsertPerson(Table_Test_1 person)
+        public bool InsertPerson(Product person)
         {
             try
             {
-                db.Table_Test_1.Add(person);
+                db.Products.Add(person);
                 return true;
             }
             catch (Exception)
@@ -34,7 +38,7 @@ namespace WebApplication3.Services
                 return false;
             }
         }
-        public bool UpdatePerson(Table_Test_1 person)
+        public bool UpdatePerson(Product person)
         {
             try
             {
@@ -48,7 +52,7 @@ namespace WebApplication3.Services
             }
         }
 
-        public bool DeletePerson(Table_Test_1 person)
+        public bool DeletePerson(Product person)
         {
             try
             {
@@ -82,10 +86,9 @@ namespace WebApplication3.Services
             db.SaveChanges();
         }
 
-        public List<Table_Test_1> Filter(string name)
+        public List<Product> Filter(string name,string age,string gender)
         {
-            string aa = "";
-            List<Table_Test_1> filterperson = db.Table_Test_1.Where(p => (string.IsNullOrEmpty(name) || p.Name == name) && (string.IsNullOrEmpty(aa) || p.Age == aa)).ToList();
+            List<Product> filterperson = db.Products.Where(p => (string.IsNullOrEmpty(name) || p.Name == name) && (string.IsNullOrEmpty(age) || p.Age == age) && (string.IsNullOrEmpty(gender) || p.Gender == gender)).ToList();
             return filterperson;
             
         }
@@ -94,7 +97,7 @@ namespace WebApplication3.Services
         {
             OrderDetail product = new OrderDetail()
             {
-                OrderID = orderid,
+                OrderId = orderid,
                 Sno = sno,
                 Name = name,
                 Age = age,
@@ -104,6 +107,16 @@ namespace WebApplication3.Services
             db.OrderDetails.Add(product);
             db.SaveChanges();
             db.Dispose();
+        }
+
+        public void UpdatePersonById(int id, string img)
+        {
+            Product person = db.Products.FirstOrDefault(p => p.id == id);
+            if (person != null)
+            {
+                person.Img = img;
+                db.SaveChanges();
+            }
         }
     }
 }

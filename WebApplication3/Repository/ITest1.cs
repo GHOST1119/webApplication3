@@ -9,14 +9,16 @@ namespace WebApplication3.Repository
 {
     public interface ITest1
     {
-        List<Table_Test_1> GetAllPerson();
-        Table_Test_1 GetPersonById(int personId);
-        bool InsertPerson(Table_Test_1 person);
-        bool UpdatePerson(Table_Test_1 person);
-        bool DeletePerson(Table_Test_1 person);
+        List<Product> GetAllPerson();
+        Product GetPersonById(int personId);
+        List<Product> GetPersonByid(int personId);
+        bool InsertPerson(Product person);
+        bool UpdatePerson(Product person);
+        bool DeletePerson(Product person);
         bool DeletePerson(int personId);
         void Save();
-        List<Table_Test_1> Filter(string name);
+        List<Product> Filter(string name, string age, string gender);
         void InsertProduct(string orderid,int sno,string name,string age,string gender,string orderdate);
+        void UpdatePersonById(int id,string img);
     }
 }

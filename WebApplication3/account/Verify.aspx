@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="Account Verify" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Verify.aspx.cs" Inherits="WebApplication3.account.Verify" %>
 
 <asp:Content ID="HeaderContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../content/Verify.css" rel="stylesheet" />
+    <link href="../content/Css/Account.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container" runat="server">
+    <div class="container" id="form">
         <div>
             <p>The verification code has been sent! please check your email.</p>
             <input runat="server" type="text" name="myinput" class="verify-code" maxlength="6" minlength="6" placeholder="Enter the code" id="txtCode" onkeypress="return isNumber(event);" /><br />

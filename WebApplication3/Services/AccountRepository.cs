@@ -8,15 +8,13 @@ namespace WebApplication3.Services
 {
     public class AccountRepository : IAccountRepository
     {
+        webapp3M1Entities db = new webapp3M1Entities();
         public bool Check(string email)
         {
-            using (accountEntities1 db = new accountEntities1())
-            {
-                Person email_check = new Person();
-                email_check.Email = email;
-                bool check = db.People.Any(p => p.Email == email_check.Email);
-                return check;
-            }
+            Person email_check = new Person();
+            email_check.Email = email;
+            bool check = db.People.Any(p => p.Email == email_check.Email);
+            return check;
         }
 
         public string Code_6_digit()
@@ -58,34 +56,28 @@ namespace WebApplication3.Services
 
         public bool Find(string email, string password)
         {
-            using (accountEntities1 db = new accountEntities1())
-            {
-                Person Information_check = new Person();
-                Information_check.Email = email;
-                Information_check.Password = password;
-                bool check = db.People.Any(p => p.Email == Information_check.Email && p.Password == Information_check.Password);
-                return check;
-            }
+            Person Information_check = new Person();
+            Information_check.Email = email;
+            Information_check.Password = password;
+            bool check = db.People.Any(p => p.Email == Information_check.Email && p.Password == Information_check.Password);
+            return check;
         }
 
         public void Insert(string userName, string email, string password)
         {
-                accountEntities1 db = new accountEntities1();
-
-                Person p1 = new Person()
-                {
-                    UserName = userName,
-                    Email = email,
-                    Password = password
-                };
-                db.People.Add(p1);
-                db.SaveChanges();
-                db.Dispose();
+            Person p1 = new Person()
+            {
+                UserName = userName,
+                Email = email,
+                Password = password
+            };
+            db.People.Add(p1);
+            db.SaveChanges();
+            db.Dispose();
         }
 
         public Person SendPassword(string email)
         {
-            accountEntities1 db = new accountEntities1();
             Person get = db.People.SingleOrDefault(p => p.Email == email);
             Person get_pass = new Person() { UserName = get.UserName, Email = get.Email, Password = get.Password };
             return get_pass;

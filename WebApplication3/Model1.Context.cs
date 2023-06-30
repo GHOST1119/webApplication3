@@ -13,10 +13,10 @@ namespace WebApplication3
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class accountEntities1 : DbContext
+    public partial class webapp3M1Entities : DbContext
     {
-        public accountEntities1()
-            : base("name=accountEntities1")
+        public webapp3M1Entities()
+            : base("name=webapp3M1Entities")
         {
         }
     
@@ -25,7 +25,9 @@ namespace WebApplication3
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Image> Images { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Person> People { get; set; }
-        public virtual DbSet<Verify> Verifies { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
     }
 }

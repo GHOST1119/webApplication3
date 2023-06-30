@@ -14,7 +14,8 @@ namespace WebApplication3
     
     public partial class OrderDetail
     {
-        public string OrderID { get; set; }
+        public int id { get; set; }
+        public string OrderId { get; set; }
         public int Sno { get; set; }
         public string Name { get; set; }
         public string Age { get; set; }

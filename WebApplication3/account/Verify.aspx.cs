@@ -45,7 +45,8 @@ namespace WebApplication3.account
             {
                 HttpCookie cookie = Request.Cookies["UserInfo"];
                 accountRepository.Insert(cookie["userName"], cookie["email"], cookie["password"]);
-                Response.Redirect("../html%20view/accountVerify.html");
+                Response.Write("<script>alert('Your account has been Successfully Verify.');</script>");
+                Response.Redirect("Login.aspx");
             }
             else
             {

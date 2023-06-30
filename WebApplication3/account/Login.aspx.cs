@@ -29,7 +29,8 @@ namespace WebApplication3.account
                 bool find = accountRepositiry.Find(txtEmail.Value, txtPassword.Value);
                 if (find == true)
                 {
-                    Response.Redirect("");
+                    Session["Email"] = txtEmail.Value;
+                    Response.Redirect("Profile.aspx");
                 }
                 else
                 {

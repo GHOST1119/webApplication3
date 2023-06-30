@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="ForgotPassword" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="WebApplication3.account.ForgotPassword" %>
 
 <asp:Content ID="HeaderContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../content/forgotPassword.css" rel="stylesheet" />
+    <link href="../content/Css/Account.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div>
+    <div class="container" id="form">
         <img src="../../img/310-3105859_film-cinema-icon-png.png" alt="Logo" height="120px">
         <h2>Welcome</h2>
         <input id="txtEmail" type="email" placeholder="Email" required runat="server"><br />

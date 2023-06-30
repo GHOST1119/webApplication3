@@ -1,28 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="test1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'test1.dbo.Images' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Images">
-          <Property Name="id" Type="int" />
-          <Property Name="IMG" Type="varbinary(max)" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'test1.dbo.OrderDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IMG" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="OrderDetails">
     <Key>
-      <PropertyRef Name="OrderID" />
-      <PropertyRef Name="Sno" />
-      <PropertyRef Name="Name" />
-      <PropertyRef Name="Age" />
-      <PropertyRef Name="Gender" />
-      <PropertyRef Name="OrderDate" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderID" Type="varchar(max)" Nullable="false" />
     <Property Name="Sno" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Age" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="OrderDate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderDate" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Table_Test_1">
     <Key>
@@ -32,18 +27,11 @@ warning 6002: The table/view 'test1.dbo.OrderDetails' does not have a primary ke
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Age" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="img" Type="nvarchar(max)" />
   </EntityType>
   <EntityContainer Name="test1ModelStoreContainer">
+    <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Table_Test_1" EntityType="Self.Table_Test_1" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [OrderDetails].[OrderID] AS [OrderID], 
-    [OrderDetails].[Sno] AS [Sno], 
-    [OrderDetails].[Name] AS [Name], 
-    [OrderDetails].[Age] AS [Age], 
-    [OrderDetails].[Gender] AS [Gender], 
-    [OrderDetails].[OrderDate] AS [OrderDate]
-    FROM [dbo].[OrderDetails] AS [OrderDetails]</DefiningQuery>
-    </EntitySet>
   </EntityContainer>
 </Schema>

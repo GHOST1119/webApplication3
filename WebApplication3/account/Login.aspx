@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebApplication3.account.WebForm2" %>
 
 <asp:Content ID="HeaderContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../content/Login.css" rel="stylesheet" />
+    <link href="../content/Css/Account.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div>
-        <img src="../../img/310-3105859_film-cinema-icon-png.png" alt="Logo" height="120px">
+    <div class="container" id="form">
+        <img src="../../img/310-3105859_film-cinema-icon-png.png" alt="Logo">
         <h2>Welcome</h2>
         <input id="txtEmail" type="email" placeholder="Email" required runat="server"><br />
         <input id="txtPassword" type="password" placeholder="Password" required runat="server"><br />

@@ -1,0 +1,64 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+
+body {
+    background-image: url(../../img/dark_tint.png), url(../../img/bokeh_car_lights_bg.jpg);
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#form {
+    padding: 3em;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: center;
+    transition: all 0.2s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(6.0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+#form img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+#form h2 {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#form input {
+    width: 200px;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: none;
+    border-radius: 5000px;
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 2px 10px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(6.0px);
+    font-family: Montserrat, sans-serif;
+    color: #000;
+    font-weight: bold;
+    transition: all ease-in-out;
+}
+
+::placeholder {
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    color: #000;
+}

@@ -44,6 +44,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.bootstrap, Version=5.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.5.2.3\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.6.0\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined, Version=1.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.12.1\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -51,7 +60,27 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Reactive, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reactive.4.0.0\lib\net46\System.Reactive.dll</HintPath>
     </Reference>
@@ -71,6 +100,9 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Twilio, Version=6.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.6.7.0\lib\net451\Twilio.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -78,29 +110,93 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="account\ApplyFilter.aspx" />
+    <Content Include="About.aspx" />
+    <Content Include="account\AddProjects.aspx" />
+    <Content Include="account\AllProjects.aspx" />
+    <Content Include="account\Projects.aspx" />
     <Content Include="account\cartPage.aspx" />
     <Content Include="account\ForgotPassword.aspx" />
     <Content Include="account\fullDataOfProjects.aspx" />
     <Content Include="account\PlaceOrder.aspx" />
     <Content Include="account\Profile.aspx" />
-    <Content Include="account\register.aspx" />
+    <Content Include="account\Register.aspx" />
     <Content Include="account\Login.aspx" />
     <Content Include="account\Verify.aspx" />
+    <Content Include="account\WebForm1.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="content\Css\Account.css" />
     <Content Include="content\applyFilter.css" />
+    <Content Include="content\bootstrap-grid.css" />
+    <Content Include="content\bootstrap-grid.min.css" />
+    <Content Include="content\bootstrap-grid.rtl.css" />
+    <Content Include="content\bootstrap-grid.rtl.min.css" />
+    <Content Include="content\bootstrap-reboot.css" />
+    <Content Include="content\bootstrap-reboot.min.css" />
+    <Content Include="content\bootstrap-reboot.rtl.css" />
+    <Content Include="content\bootstrap-reboot.rtl.min.css" />
     <Content Include="content\bootstrap-theme.css" />
     <Content Include="content\bootstrap-theme.min.css" />
+    <Content Include="content\bootstrap-utilities.css" />
+    <Content Include="content\bootstrap-utilities.min.css" />
+    <Content Include="content\bootstrap-utilities.rtl.css" />
+    <Content Include="content\bootstrap-utilities.rtl.min.css" />
     <Content Include="content\bootstrap.css" />
     <Content Include="content\bootstrap.min.css" />
-    <Content Include="content\forgotPassword.css" />
-    <Content Include="content\Login.css" />
-    <Content Include="content\register.css" />
-    <Content Include="content\Verify.css" />
+    <Content Include="content\bootstrap.rtl.css" />
+    <Content Include="content\bootstrap.rtl.min.css" />
+    <Content Include="content\Css\home.css" />
+    <Content Include="content\Css\profile.css" />
+    <Content Include="content\Css\showData.css" />
+    <Content Include="content\themes\base\accordion.css" />
+    <Content Include="content\themes\base\all.css" />
+    <Content Include="content\themes\base\autocomplete.css" />
+    <Content Include="content\themes\base\base.css" />
+    <Content Include="content\themes\base\button.css" />
+    <Content Include="content\themes\base\core.css" />
+    <Content Include="content\themes\base\datepicker.css" />
+    <Content Include="content\themes\base\dialog.css" />
+    <Content Include="content\themes\base\draggable.css" />
+    <Content Include="content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="content\themes\base\jquery-ui.css" />
+    <Content Include="content\themes\base\jquery-ui.min.css" />
+    <Content Include="content\themes\base\menu.css" />
+    <Content Include="content\themes\base\progressbar.css" />
+    <Content Include="content\themes\base\resizable.css" />
+    <Content Include="content\themes\base\selectable.css" />
+    <Content Include="content\themes\base\selectmenu.css" />
+    <Content Include="content\themes\base\slider.css" />
+    <Content Include="content\themes\base\sortable.css" />
+    <Content Include="content\themes\base\spinner.css" />
+    <Content Include="content\themes\base\tabs.css" />
+    <Content Include="content\themes\base\theme.css" />
+    <Content Include="content\themes\base\tooltip.css" />
+    <Content Include="Defualt.aspx" />
     <Content Include="font\fontawesome-webfont.svg" />
-    <Content Include="html view\accountVerify.html" />
     <Content Include="html view\forgotPassword.html" />
+    <Content Include="img\1.gif" />
     <Content Include="img\134-1340367_movie-icons-free-download-software-icon-png-blue.png" />
+    <Content Include="img\2.gif" />
+    <Content Include="img\3.jpg" />
     <Content Include="img\310-3105859_film-cinema-icon-png.png" />
+    <Content Include="img\4.gif" />
     <Content Include="img\bokeh_car_lights_bg.jpg" />
     <Content Include="img\dark_tint.png" />
     <Content Include="img\favorite.png" />
@@ -131,15 +227,93 @@
       <DependentUpon>Model2.edmx</DependentUpon>
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="content\bootstrap.rtl.min.css.map" />
+    <Content Include="content\bootstrap.rtl.css.map" />
+    <Content Include="content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="content\bootstrap-utilities.min.css.map" />
+    <Content Include="content\bootstrap-utilities.css.map" />
+    <Content Include="content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="content\bootstrap-reboot.min.css.map" />
+    <Content Include="content\bootstrap-reboot.css.map" />
+    <Content Include="content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="content\bootstrap-grid.rtl.css.map" />
+    <Content Include="content\bootstrap-grid.min.css.map" />
+    <Content Include="content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-1.12.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <None Include="Scripts\jquery-3.6.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="account\ApplyFilter.aspx.cs">
-      <DependentUpon>ApplyFilter.aspx</DependentUpon>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="account\ApplyFilter.aspx.designer.cs">
-      <DependentUpon>ApplyFilter.aspx</DependentUpon>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\AddProjects.aspx.cs">
+      <DependentUpon>AddProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\AddProjects.aspx.designer.cs">
+      <DependentUpon>AddProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\AllProjects.aspx.cs">
+      <DependentUpon>AllProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\AllProjects.aspx.designer.cs">
+      <DependentUpon>AllProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
     <Compile Include="account\cartPage.aspx.cs">
       <DependentUpon>cartPage.aspx</DependentUpon>
@@ -176,12 +350,12 @@
     <Compile Include="account\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="account\register.aspx.cs">
-      <DependentUpon>register.aspx</DependentUpon>
+    <Compile Include="account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="account\register.aspx.designer.cs">
-      <DependentUpon>register.aspx</DependentUpon>
+    <Compile Include="account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -196,6 +370,30 @@
     </Compile>
     <Compile Include="account\Verify.aspx.designer.cs">
       <DependentUpon>Verify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Defualt.aspx.cs">
+      <DependentUpon>Defualt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Defualt.aspx.designer.cs">
+      <DependentUpon>Defualt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -246,6 +444,13 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
     <Compile Include="Table_Test_1.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -279,6 +484,10 @@
     </Content>
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
+    <Content Include="Scripts\jquery-1.12.4.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+    <Content Include="Site2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -288,6 +497,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
