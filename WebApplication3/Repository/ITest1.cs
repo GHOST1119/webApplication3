@@ -20,5 +20,7 @@ namespace WebApplication3.Repository
         List<Product> Filter(string name, string age, string gender);
         void InsertProduct(string orderid,int sno,string name,string age,string gender,string orderdate);
         void UpdatePersonById(int id,string img);
+        void InsertNewWallet(string username);
+        Person GetPersonByUserName(string username);
     }
 }

@@ -43,11 +43,38 @@
           <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Img" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <EntityType Name="Wallet">
+          <Key>
+            <PropertyRef Name="WalletId" />
+          </Key>
+          <Property Name="WalletId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonId" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PersonMoney" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Wallet__PersonId__5CD6CB2B">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Wallet" Type="Self.Wallet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Wallet">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="webapp3M1ModelStoreContainer">
           <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wallet" EntityType="Self.Wallet" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Wallet__PersonId__5CD6CB2B" Association="Self.FK__Wallet__PersonId__5CD6CB2B">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Wallet" EntitySet="Wallet" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -81,6 +108,7 @@
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Wallets" Relationship="Self.FK__Wallet__PersonId__5CD6CB2B" FromRole="Person" ToRole="Wallet" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -92,18 +120,46 @@
           <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="webapp3M1Entities" annotation:LazyLoadingEnabled="true">
+        <EntityType Name="Wallet">
+          <Key>
+            <PropertyRef Name="WalletId" />
+          </Key>
+          <Property Name="WalletId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonId" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PersonMoney" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK__Wallet__PersonId__5CD6CB2B" FromRole="Wallet" ToRole="Person" />
+        </EntityType>
+        <Association Name="FK__Wallet__PersonId__5CD6CB2B">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Wallet" Type="Self.Wallet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Wallet">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="webapp3M1Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Images" EntityType="Self.Image" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
           <EntitySet Name="People" EntityType="Self.Person" />
           <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Wallets" EntityType="Self.Wallet" />
+          <AssociationSet Name="FK__Wallet__PersonId__5CD6CB2B" Association="Self.FK__Wallet__PersonId__5CD6CB2B">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Wallet" EntitySet="Wallets" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="webapp3M1ModelStoreContainer" CdmEntityContainer="webapp3M1Entities">
+        <EntityContainerMapping StorageEntityContainer="webapp3M1ModelStoreContainer" CdmEntityContainer="webapp3M1Entities1">
           <EntitySetMapping Name="Images">
             <EntityTypeMapping TypeName="webapp3M1Model.Image">
               <MappingFragment StoreEntitySet="Image">
@@ -143,6 +199,17 @@
                 <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wallets">
+            <EntityTypeMapping TypeName="webapp3M1Model.Wallet">
+              <MappingFragment StoreEntitySet="Wallet">
+                <ScalarProperty Name="WalletId" ColumnName="WalletId" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PersonMoney" ColumnName="PersonMoney" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

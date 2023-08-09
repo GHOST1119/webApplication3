@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="webapp3M1ModelStoreContainer" CdmEntityContainer="webapp3M1Entities">
+  <EntityContainerMapping StorageEntityContainer="webapp3M1ModelStoreContainer" CdmEntityContainer="webapp3M1Entities1">
     <EntitySetMapping Name="Images">
       <EntityTypeMapping TypeName="webapp3M1Model.Image">
         <MappingFragment StoreEntitySet="Image">
@@ -40,6 +40,17 @@
           <ScalarProperty Name="Age" ColumnName="Age" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
           <ScalarProperty Name="Img" ColumnName="Img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wallets">
+      <EntityTypeMapping TypeName="webapp3M1Model.Wallet">
+        <MappingFragment StoreEntitySet="Wallet">
+          <ScalarProperty Name="WalletId" ColumnName="WalletId" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PersonMoney" ColumnName="PersonMoney" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

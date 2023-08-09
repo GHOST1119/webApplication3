@@ -12,20 +12,14 @@ namespace WebApplication3
     using System;
     using System.Collections.Generic;
     
-    public partial class Person
+    public partial class Wallet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Person()
-        {
-            this.Wallets = new HashSet<Wallet>();
-        }
-    
-        public int id { get; set; }
+        public int WalletId { get; set; }
+        public int PersonId { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
+        public int PersonMoney { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Wallet> Wallets { get; set; }
+        public virtual Person Person { get; set; }
     }
 }

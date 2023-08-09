@@ -8,7 +8,7 @@ namespace WebApplication3.Services
 {
     public class AccountRepository : IAccountRepository
     {
-        webapp3M1Entities db = new webapp3M1Entities();
+        webapp3M1Entities1 db = new webapp3M1Entities1();
         public bool Check(string email)
         {
             Person email_check = new Person();

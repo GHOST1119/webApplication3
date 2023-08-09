@@ -10,7 +10,7 @@ namespace WebApplication3.Services
 {
     public class Test1 : ITest1
     {
-        webapp3M1Entities db = new webapp3M1Entities();
+        webapp3M1Entities1 db = new webapp3M1Entities1();
         public List<Product> GetAllPerson()
         {
             return db.Products.ToList();
@@ -117,6 +117,25 @@ namespace WebApplication3.Services
                 person.Img = img;
                 db.SaveChanges();
             }
+        }
+
+        public void InsertNewWallet(string username)
+        {
+            Person person = GetPersonByUserName(username);
+            Wallet wallet = new Wallet()
+            {
+                PersonId = person.id,
+                UserName = person.UserName,
+                Email = person.Email,
+                PersonMoney = 0
+            };
+            db.Wallets.Add(wallet);
+            db.SaveChanges();
+        }
+
+        public Person GetPersonByUserName(string username)
+        {
+            return db.People.Find(username);
         }
     }
 }

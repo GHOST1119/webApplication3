@@ -13,10 +13,10 @@ namespace WebApplication3
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class webapp3M1Entities : DbContext
+    public partial class webapp3M1Entities1 : DbContext
     {
-        public webapp3M1Entities()
-            : base("name=webapp3M1Entities")
+        public webapp3M1Entities1()
+            : base("name=webapp3M1Entities1")
         {
         }
     
@@ -29,5 +29,6 @@ namespace WebApplication3
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Person> People { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Wallet> Wallets { get; set; }
     }
 }
